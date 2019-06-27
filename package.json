@@ -1,8 +1,17 @@
 {
 	"name": "ascii-art-coordinate-grid",
-	"description": "",
+	"description": "Read a 2D coordinate grid from an ASCII-art-like string.",
 	"version": "0.0.0",
-	"keywords": [],
+	"keywords": [
+		"ascii",
+		"art",
+		"grid",
+		"coordinates",
+		"coordinate",
+		"2d",
+		"points",
+		"canvas"
+	],
 	"author": "Julius Tens <mail@juliustens.eu>",
 	"homepage": "https://github.com/juliuste/ascii-art-coordinate-grid",
 	"repository": "juliuste/ascii-art-coordinate-grid",
