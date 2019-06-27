@@ -31,5 +31,10 @@
 	"engines": {
 		"node": ">=8"
 	},
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"grapheme-splitter": "^1.0.4",
+		"lodash": "^4.17.11",
+		"split-lines": "^2.0.0"
+	}
 }
