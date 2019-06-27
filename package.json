@@ -1,0 +1,35 @@
+{
+	"name": "ascii-art-coordinate-grid",
+	"description": "",
+	"version": "0.0.0",
+	"keywords": [],
+	"author": "Julius Tens <mail@juliustens.eu>",
+	"homepage": "https://github.com/juliuste/ascii-art-coordinate-grid",
+	"repository": "juliuste/ascii-art-coordinate-grid",
+	"bugs": "https://github.com/juliuste/ascii-art-coordinate-grid/issues",
+	"main": "lib/index.js",
+	"files": [
+		"lib/*"
+	],
+	"devDependencies": {
+		"depcheck": "^0.8.1",
+		"eslint": "^6.0.1",
+		"eslint-config-standard": "^12.0.0",
+		"eslint-plugin-import": "^2.18.0",
+		"eslint-plugin-node": "^9.1.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-standard": "^4.0.0",
+		"tape": "^4.10.2"
+	},
+	"scripts": {
+		"check-deps": "depcheck",
+		"lint": "eslint lib test.js",
+		"fix": "eslint --fix lib test.js",
+		"test": "npm run lint && npm run check-deps && node test",
+		"prepublishOnly": "npm test"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"license": "ISC"
+}
