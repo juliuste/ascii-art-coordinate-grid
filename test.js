@@ -1,8 +1,9 @@
 'use strict'
 
 const tape = require('tape')
-
 const readCoordinateGrid = require('.')
+
+/* eslint-disable quote-props */
 
 const valid = [
 	{
