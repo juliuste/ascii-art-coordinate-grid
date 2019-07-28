@@ -1,49 +1,49 @@
 {
 	"name": "ascii-art-coordinate-grid",
-	"description": "Read a 2D coordinate grid from an ASCII-art-like string.",
 	"version": "1.0.0",
+	"description": "Read a 2D coordinate grid from an ASCII-art-like string.",
 	"keywords": [
-		"ascii",
-		"art",
-		"grid",
-		"coordinates",
-		"coordinate",
 		"2d",
-		"points",
-		"canvas"
+		"art",
+		"ascii",
+		"canvas",
+		"coordinate",
+		"coordinates",
+		"grid",
+		"points"
 	],
-	"author": "Julius Tens <mail@juliustens.eu>",
 	"homepage": "https://github.com/juliuste/ascii-art-coordinate-grid",
-	"repository": "juliuste/ascii-art-coordinate-grid",
 	"bugs": "https://github.com/juliuste/ascii-art-coordinate-grid/issues",
-	"main": "lib/index.js",
+	"repository": "juliuste/ascii-art-coordinate-grid",
+	"license": "ISC",
+	"author": "Julius Tens <mail@juliustens.eu>",
 	"files": [
 		"lib/*"
 	],
+	"main": "lib/index.js",
+	"scripts": {
+		"check-deps": "depcheck",
+		"fix": "eslint --fix lib test.js",
+		"lint": "eslint lib test.js",
+		"prepublishOnly": "npm test",
+		"test": "npm run lint && npm run check-deps && node test"
+	},
+	"dependencies": {
+		"grapheme-splitter": "^1.0.4",
+		"lodash": "^4.17.15",
+		"split-lines": "^2.0.0"
+	},
 	"devDependencies": {
-		"depcheck": "^0.8.1",
-		"eslint": "^6.0.1",
-		"eslint-config-standard": "^12.0.0",
-		"eslint-plugin-import": "^2.18.0",
+		"depcheck": "^0.8.3",
+		"eslint": "^6.1.0",
+		"eslint-config-standard": "^13.0.1",
+		"eslint-plugin-import": "^2.18.2",
 		"eslint-plugin-node": "^9.1.0",
 		"eslint-plugin-promise": "^4.2.1",
 		"eslint-plugin-standard": "^4.0.0",
-		"tape": "^4.10.2"
-	},
-	"scripts": {
-		"check-deps": "depcheck",
-		"lint": "eslint lib test.js",
-		"fix": "eslint --fix lib test.js",
-		"test": "npm run lint && npm run check-deps && node test",
-		"prepublishOnly": "npm test"
+		"tape": "^4.11.0"
 	},
 	"engines": {
 		"node": ">=8"
-	},
-	"license": "ISC",
-	"dependencies": {
-		"grapheme-splitter": "^1.0.4",
-		"lodash": "^4.17.11",
-		"split-lines": "^2.0.0"
 	}
 }
