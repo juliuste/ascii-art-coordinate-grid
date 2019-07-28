@@ -136,6 +136,15 @@ const invalid = [
 	`
 ]
 
+const validWithGroups = `
+	. . . . . + . . . . .
+	. . C C . + . . . . .
+	. . . . . + . A . . .
+	. . . . . + . . . . .
+	+ + B + + A + + + + +
+	. . . . . + . . . . .
+`
+
 tape('ascii-art-coordinate-grid', t => {
 	valid.forEach(({ grid, options, points }, index) => {
 		const found = readCoordinateGrid(grid, options)
@@ -145,6 +154,12 @@ tape('ascii-art-coordinate-grid', t => {
 	invalid.forEach((grid, index) => {
 		t.throws(() => readCoordinateGrid(grid), `invalid grid ${index}`)
 	})
+
+	t.throws(() => readCoordinateGrid(validWithGroups), 'invalid with groups')
+	const resultWithGroups = readCoordinateGrid(validWithGroups, { groups: true })
+	t.deepEqual([...resultWithGroups.A], [...new Set([[2, 2], [0, 0]])], 'valid with groups')
+	t.deepEqual([...resultWithGroups.B], [...new Set([[-3, 0]])], 'valid with groups')
+	t.deepEqual([...resultWithGroups.C], [...new Set([[-3, 3], [-2, 3]])], 'valid with groups')
 
 	t.end()
 })

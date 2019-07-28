@@ -63,9 +63,10 @@ C # # # # # #
 . . # . . . 🇪🇸
 `
 const options = {
-    axisCellCharacter: '#' // defaults to `+`
-    normalCellCharacter: '.' // defaults to `.`
-    transformCoordinates: ([x, y]) => [x, y] // defaults to the identity function, is applied to all points
+    axisCellCharacter: '#', // defaults to `+`
+    normalCellCharacter: '.', // defaults to `.`
+    transformCoordinates: ([x, y]) => [x, y], // defaults to the identity function, is applied to all points
+    groups: false // if you set this to true, you can use the same character more than once and the points object will contain Sets of coordinates per character instead of one coordinate pair per character
 }
 
 const points = readGrid(gridString, options)
