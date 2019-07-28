@@ -1,6 +1,6 @@
 {
 	"name": "ascii-art-coordinate-grid",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Read a 2D coordinate grid from an ASCII-art-like string.",
 	"keywords": [
 		"2d",
