@@ -25,8 +25,8 @@ const valid = [
 			C: [2, -2],
 			D: [-3, -3],
 			E: [-3, 0],
-			F: [-3, 3]
-		}
+			F: [-3, 3],
+		},
 	},
 	{
 		grid: `
@@ -45,15 +45,15 @@ const valid = [
 		`,
 		options: {
 			axisCellCharacter: 'ㅅ',
-			normalCellCharacter: 'ㅡ'
+			normalCellCharacter: 'ㅡ',
 		},
 		points: {
 			'율': [0, 6],
 			'🇰🇷': [10, 4],
 			'리': [6, 0],
 			'우': [2, -2],
-			'스': [-3, -3]
-		}
+			'스': [-3, -3],
+		},
 	},
 	{
 		grid: `
@@ -66,15 +66,15 @@ const valid = [
 		`,
 		options: {
 			axisCellCharacter: '-',
-			transformCoordinates: ([x, y]) => ({ x: 2 * x, y: 2 * y })
+			transformCoordinates: ([x, y]) => ({ x: 2 * x, y: 2 * y }),
 		},
 		points: {
 			a: { x: 2, y: -2 },
 			b: { x: 4, y: -4 },
 			c: { x: 6, y: -6 },
-			d: { x: 10, y: -8 }
-		}
-	}
+			d: { x: 10, y: -8 },
+		},
+	},
 ]
 
 const invalid = [
@@ -133,7 +133,7 @@ const invalid = [
 	. . . . . + . . . . .
 	+ + E + + A + + + + +
 	. . . . . + . . . . .
-	`
+	`,
 ]
 
 const validWithGroups = `
