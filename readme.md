@@ -2,7 +2,7 @@
 
 Read a 2D coordinate grid from an *ASCII-art-like* string.
 
-When writing tests for modules that take some list of 2d coordinates as input (e.g. a polygon or an embedding of a graph), I often find it hard to make my input human readable. My data mostly looks somewhat like this:
+When writing tests for modules that take some list of 2d coordinates as input (e.g. a polygon or an embedding of a graph), I often find it hard to make my the test's input data human readable. For example, a polygon ends up looking like this:
 
 ```js
 const polygon = [
@@ -15,7 +15,7 @@ const polygon = [
 ]
 ```
 
-As you can see, it's pretty hard to tell how this polygon looks like, and it gets even more complicated when you have multiple inputs. This is why I created this small module, which allows you to do the following instead:
+As you can see, it's not really obvious how that polygon looks like or what properties it has (e.g. being concave). So, in order to improve readability, I created this module, which allows you to draw out your points on an *ASCII-art-like* coordinate grid instead:
 
 ```js
 const readGrid = require('ascii-art-coordinate-grid')
@@ -31,17 +31,16 @@ const coordinateGrid = `
 . . . . . + . . . . .
 `
 
-const points = readGrid(coordinateGrid)
+const points = readGrid(coordinateGrid) // check the "usage" section for further explanations
 const polygon = [points.A, points.B, points.C, points.D, points.E, points.F]
 ```
 
-See [#usage](#usage) for more details.
+Now, `polygon` will contain the same numerical values as before, but the reader might have a much easier time understanding the data.
 
 [![npm version](https://img.shields.io/npm/v/ascii-art-coordinate-grid.svg)](https://www.npmjs.com/package/ascii-art-coordinate-grid)
 [![Build Status](https://travis-ci.org/juliuste/ascii-art-coordinate-grid.svg?branch=master)](https://travis-ci.org/juliuste/ascii-art-coordinate-grid)
 [![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/ascii-art-coordinate-grid.svg)](https://greenkeeper.io/)
 [![license](https://img.shields.io/github/license/juliuste/ascii-art-coordinate-grid.svg?style=flat)](license)
-[![chat on gitter](https://badges.gitter.im/juliuste.svg)](https://gitter.im/juliuste)
 
 ## Installation
 
