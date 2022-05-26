@@ -1,14 +1,12 @@
-'use strict'
-
-const GraphemeSplitter = require('grapheme-splitter')
-const splitLines = require('split-lines')
-const merge = require('lodash/merge')
-const isFunction = require('lodash/isFunction')
-const trim = require('lodash/trim')
-const replace = require('lodash/replace')
-const range = require('lodash/range')
-const flatMap = require('lodash/flatMap')
-const reduce = require('lodash/reduce')
+import GraphemeSplitter from 'grapheme-splitter'
+import splitLines from 'split-lines'
+import merge from 'lodash/merge.js'
+import isFunction from 'lodash/isFunction.js'
+import trim from 'lodash/trim.js'
+import replace from 'lodash/replace.js'
+import range from 'lodash/range.js'
+import flatMap from 'lodash/flatMap.js'
+import reduce from 'lodash/reduce.js'
 
 const graphemeSplitter = new GraphemeSplitter()
 const getCharacters = string => graphemeSplitter.splitGraphemes(string)
@@ -28,7 +26,7 @@ const defaults = {
 	groups: false,
 }
 
-const readCoordinateGrid = (gridString, opt = {}) => {
+export default (gridString, opt = {}) => {
 	// validate user input
 	const options = merge({}, defaults, opt)
 	if (!isValidCellCharacter(options.axisCellCharacter)) throw new Error('invalid opt.axisCellCharacter: must be a single, non-whitespace character')
@@ -73,5 +71,3 @@ const readCoordinateGrid = (gridString, opt = {}) => {
 		return sum
 	}, {})
 }
-
-module.exports = readCoordinateGrid

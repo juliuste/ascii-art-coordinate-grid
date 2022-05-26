@@ -17,33 +17,34 @@
 	"repository": "juliuste/ascii-art-coordinate-grid",
 	"license": "ISC",
 	"author": "Julius Tens <mail@juliustens.eu>",
-	"main": "lib/index.js",
+	"main": "src/index.js",
 	"files": [
-		"lib/*"
+		"src/*",
+		"!src/*.test.js"
 	],
+	"type": "module",
 	"scripts": {
 		"check-deps": "depcheck",
-		"fix": "eslint --fix lib test.js",
-		"lint": "eslint lib test.js",
+		"fix": "npm run lint -- --fix",
+		"lint": "eslint src",
 		"prepublishOnly": "npm test",
-		"test": "npm run lint && npm run check-deps && node test"
+		"test": "npm run lint && npm run check-deps && ava"
 	},
 	"dependencies": {
 		"grapheme-splitter": "^1.0.4",
-		"lodash": "^4.17.15",
-		"split-lines": "^2.0.0"
+		"lodash": "^4.17.21",
+		"split-lines": "^3.0.0"
 	},
 	"devDependencies": {
-		"depcheck": "^0.9.2",
-		"eslint": "^6.8.0",
-		"eslint-config-standard": "^14.1.1",
-		"eslint-plugin-import": "^2.20.2",
-		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-standard": "^4.0.1",
-		"tape": "^4.13.2"
+		"ava": "^4.2.0",
+		"depcheck": "^1.4.3",
+		"eslint": "^8.16.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-n": "^15.2.0",
+		"eslint-plugin-promise": "^6.0.0"
 	},
 	"engines": {
-		"node": ">=10"
+		"node": ">=14"
 	}
 }

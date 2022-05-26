@@ -18,7 +18,7 @@ const polygon = [
 As you can see, it's not really obvious how that polygon looks like or what properties it has (e.g. being concave). So, in order to improve readability, I created this module, which allows you to draw out your points on an *ASCII-art-like* coordinate grid instead:
 
 ```js
-const readGrid = require('ascii-art-coordinate-grid')
+import readGrid from 'ascii-art-coordinate-grid'
 const coordinateGrid = `
 . . . . . + . . . . .
 . . F . . + . . . . .
@@ -38,9 +38,8 @@ const polygon = [points.A, points.B, points.C, points.D, points.E, points.F]
 Now, `polygon` will contain the same numerical values as before, but the reader might have a much easier time understanding the data.
 
 [![npm version](https://img.shields.io/npm/v/ascii-art-coordinate-grid.svg)](https://www.npmjs.com/package/ascii-art-coordinate-grid)
-[![Build Status](https://travis-ci.org/juliuste/ascii-art-coordinate-grid.svg?branch=master)](https://travis-ci.org/juliuste/ascii-art-coordinate-grid)
-[![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/ascii-art-coordinate-grid.svg)](https://greenkeeper.io/)
-[![license](https://img.shields.io/github/license/juliuste/ascii-art-coordinate-grid.svg?style=flat)](license)
+[![License](https://img.shields.io/github/license/juliuste/ascii-art-coordinate-grid.svg?style=flat)](license)
+[![Contact me](https://img.shields.io/badge/contact-email-turquoise)](mailto:mail@juliustens.eu)
 
 ## Installation
 
@@ -50,8 +49,10 @@ npm install ascii-art-coordinate-grid
 
 ## Usage
 
+**This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).**
+
 ```javascript
-const readGrid = require('ascii-art-coordinate-grid')
+import readGrid from 'ascii-art-coordinate-grid'
 
 const gridString = `
 . . # . . . .

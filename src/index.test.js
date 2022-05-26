@@ -1,7 +1,5 @@
-'use strict'
-
-const tape = require('tape')
-const readCoordinateGrid = require('.')
+import test from 'ava'
+import readCoordinateGrid from './index.js'
 
 /* eslint-disable quote-props */
 
@@ -145,21 +143,19 @@ const validWithGroups = `
 	. . . . . + . . . . .
 `
 
-tape('ascii-art-coordinate-grid', t => {
+test('ascii-art-coordinate-grid', async t => {
 	valid.forEach(({ grid, options, points }, index) => {
 		const found = readCoordinateGrid(grid, options)
 		t.deepEqual(found, points, `valid grid ${index}`)
 	})
 
 	invalid.forEach((grid, index) => {
-		t.throws(() => readCoordinateGrid(grid), `invalid grid ${index}`)
+		t.throws(() => readCoordinateGrid(grid), undefined, `invalid grid ${index}`)
 	})
 
-	t.throws(() => readCoordinateGrid(validWithGroups), 'invalid with groups')
+	t.throws(() => readCoordinateGrid(validWithGroups))
 	const resultWithGroups = readCoordinateGrid(validWithGroups, { groups: true })
-	t.deepEqual([...resultWithGroups.A], [...new Set([[2, 2], [0, 0]])], 'valid with groups')
-	t.deepEqual([...resultWithGroups.B], [...new Set([[-3, 0]])], 'valid with groups')
-	t.deepEqual([...resultWithGroups.C], [...new Set([[-3, 3], [-2, 3]])], 'valid with groups')
-
-	t.end()
+	t.deepEqual([...resultWithGroups.A], [...new Set([[2, 2], [0, 0]])])
+	t.deepEqual([...resultWithGroups.B], [...new Set([[-3, 0]])])
+	t.deepEqual([...resultWithGroups.C], [...new Set([[-3, 3], [-2, 3]])])
 })
